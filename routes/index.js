@@ -4,10 +4,7 @@ var db = require('../public/javascripts/testSql')();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  db.select(function (err, result) {
-    if (err) console.log(err);
-    else res.send(result);
-  });	
+	res.render('index');
 });
 
 module.exports = router;
