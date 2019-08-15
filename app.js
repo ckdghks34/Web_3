@@ -24,6 +24,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/png',express.static(__dirname + "/png"));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/student',studentRouter);

@@ -12,7 +12,7 @@ module.exports = function () {
 				});
 			});
 		},
-		select_id: function(callback){
+		select_s_id: function(callback){
 			pool.getConnection(function(err,con){
 				var sql='select S_ID from STUDENT';
 				con.query(sql, function(err,result,fields){
@@ -22,7 +22,7 @@ module.exports = function () {
 				});
 			});
 		},
-		select_pw: function(callback){
+		select_s_pw: function(callback){
 			pool.getConnection(function(err,con){
 				var sql = 'select S_PW from STUDENT';
 				con.query(sql, function(err,result,fields){
@@ -32,7 +32,7 @@ module.exports = function () {
 				});
 			});
 		},
-		select_name: function(callback){
+		select_s_name: function(callback){
 			pool.getConnection(function(err,con){
 				var sql = 'select S_NAME from STUDENT';
 				con.query(sql, function(err,result,fields){
@@ -42,7 +42,7 @@ module.exports = function () {
 				});
 			});
 		},
-		select_grade: function(callback){
+		select_s_grade: function(callback){
 			pool.getConnection(function(err,con){
 				var sql = 'select S_GRADE from STUDENT';
 				con.query(sql,function(err,result,fields){
