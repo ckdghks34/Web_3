@@ -9,36 +9,69 @@ body {
   margin-left: 100px;
   margin-right: 100px;
 }
-#menubar ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0;
-  overflow: hidden; /*남는여백은 선택되지 않음*/
-  background-color: #2d5bb9;
-  border: solid 1px #142952;
-  border-collapse: collapse;  /*베이블 셀 간격 없애기*/
+#topMenu{/*탑메뉴의 높이와 너비*/
+  height: 70px;
+  width: device-width;
 }
-#menubar image {
-  display: : block; /*이미지 공백 없애기 ..다 해봐도 안돼요ㅠㅠ*/
-  vertical-align: bottom;
-  margin-bottom: -3px;
-  margin:0px; padding:0px;
+#topMenu ul{
+  list-style-type: none;/*list 앞의 마커를 정하는 속성*/
+  margin: 0px;/*바깥 쪽 여백*/
+  padding: 0px;/*안 쪽 여백*/
 }
-#menubar li {
-  padding-bottom:0px;
-  float: left;
+#topMenu ul li{
+  color: white;
+  background-color: #1f7ec1;
+  float: left;/*왼쪽으로 배치*/
+  line-height: 70px;/*줄의 높이*/
+  vertical-align: middle;/*수직 정렬*/
+  text-align: center;/*텍스트 정렬 방식*/
+  position: relative;/*위치는 상대적으로*/
 }
 
-#menubar li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 0px;
-  width:210px;
-  text-decoration: none;
+.menuLink, .submenuLink{
+  text-decoration: none; /*텍스트 선의 유무*/
+  display:block; /*block : 요소 앞뒤로 줄바꿈*/
+  width: 210px;
+  font-size: 20px;
+  font-weight: bold;/*글씨 굵기*/
+  font-family: "Trebuchet MS", Dotum;/*글꼴*/
 }
-#menubar li a:hover {  /* Change the link color to #111 (black) on hover */
-  background-color: #142952;
+
+.menuLink{
+  color: white;
+}
+.topMenuLi:hover .menuLink{/*탑메뉴 위에 마우스가 올려있을 시*/
+  color: white;
+  background-color: #0c324d;
+}
+.submenuLink{
+  color: gray;
+  background-color: #ddecf6;
+  margin-top: -1px;
+}
+.topMenuLi:hover .submenu{
+  height: auto;
+  /* 올렸을때 서브메뉴가 나오는 문장 */
+}
+.submenu{
+  position: absolute;/*위치는 절대적으로*/
+  height: 0px;
+  float: none;
+  overflow: hidden;/*내용이 넘치면 자르는데 자른 부분은 보이지 않음*/
+  transition: height .2s;
+}
+.submenuLink:hover{
+  color: white;
+  background-color: #334858;
+}
+.btn{
+  border: none;/*테두리의 유무*/
+  background-color: white;
+}
+ button{
+  margin: auto;
+  padding-left: 70px;
+  padding-right: 70px;
 }
 #ActivityPhotos {
         width: 45%;
@@ -102,17 +135,51 @@ body {
 </style>
 </head>
 <body >
-<div id="menubar">
-  <ul>
-  <li ><img src="./img/rogo.png" width="50px" height="50px"></li>
-  <li><a href="학과홈페이지.html">ComputerEngineering</a></li>
-  <li><a href="Department.html">Department</a></li>
-  <li><a href="Application.html">Application</a></li>
-  <li><a href="Announcement.html">Announcement</a></li>
-  <li><a href="자유게시판.html">Community</a></li>
-  <li><img src="./img/login.png"width="210px"height="50px"><li>
-  </div>
-</ul>
+  <nav id="topMenu">
+    <ul>
+      <!--<img src="./img/logo.png"width="70px"height="70px" style="float:left;">-->
+      <li class="topMenuLi"><a class="menuLink" href="main.html"><img src="./img/logo.png"width="210px"height="70px" style="float:left;"></a></li>
+      <li class="topMenuLi"><a class="menuLink"href="학과소개.html">Department</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="Department.html">학과소개</a></li>
+          <li><a class="submenuLink"href="커리큘럼.html">커리큘럼</a></li>
+          <li><a class="submenuLink"href="교수진.html">교수진</a></li>
+          <li><a class="submenuLink"href="학생회.html">학생회</a></li>
+          <li><a class="submenuLink"href="학과일정.html">학과일정</a></li>
+        </ul>
+      </li>
+      <li class="topMenuLi"><a class="menuLink"href="사물함.html">Applications</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="사물함.html">사물함</a></li>
+          <li><a class="submenuLink" href="수강증원.html">수강증원</a></li>
+          <li><a class="submenuLink" href="멘토멘티.html">멘토멘티</a></li>
+        </ul>
+      </li>
+      <li class="topMenuLi"><a class="menuLink"href="공지.html">Announcement</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="공지.html">공지</a></li>
+          <li><a class="submenuLink" href="취업게시판.html">취업게시판</a></li>
+        </ul>
+      </li>
+      <li class="topMenuLi"><a class="menuLink"href="비사광장.html">Community</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="비사광장.html">비사광장</a></li>
+          <li><a class="submenuLink" href="활동사진.html">활동사진</a></li>
+          <li><a class="submenuLink" href="자유게시판.html">자유게시판</a></li>
+          <li><a class="submenuLink" href="Q&A.html">Q&A</a></li>
+        </ul>
+      </li>
+      <section>
+      	<form action="login.js">
+          <tr>
+      		<input type = "text" placeholder="학번" name="id" style="width:150px;"><br>
+      		<input type = "password"placeholder="비밀번호" name="pw" style="width:150px;">
+      		<button type = "submit" style="text-align: center;">Log_In</button>
+        </tr>
+      </form>
+      </section>
+    </ul>
+  </nav>
 <div class="top_box">
       <div id="ActivityPhotos">
         <h1>활동사진</h1>
