@@ -52,6 +52,16 @@ module.exports = function () {
 				});
 			});
 		},
+		select_login: function(callback){
+			pool.getConnection(function(err, con) {
+				var sql = 'select count(*) from STUDENT where S_ID = id AND S_PW = pw';
+				con.query(sql, function(err, result, fields){
+					con.release();
+					if (err) return callback(err);
+					callback(null, result);
+				});
+			});
+		},
 
 		pool: pool
 	}
