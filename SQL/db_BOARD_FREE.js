@@ -1,20 +1,10 @@
-var pool = require('../config/db_config');
+var pool = require('../config/db_config')
 
-module.exports = function () {
+module.exports = function() {
 	return {
 		select: function(callback) {
 			pool.getConnection(function(err, con){
-				var sql = 'select * from BOARD_CAL';
-				con.query(sql,function (err, result, fields) {
-					con.release();
-					if(err) return callback(err);
-					callback(null, result);
-				});
-			});
-		},
-		select_cal_num: function(callback) {
-			pool.getConnection(function(err, con){
-				var sql = 'select CAL_NUM from BOARD_CAL';
+				var sql = 'select * from BOARD_FREE';
 				con.query(sql, function(err, result, fields) {
 					con.release();
 					if(err) return callback(err);
@@ -22,9 +12,29 @@ module.exports = function () {
 				});
 			});
 		},
-		select_cal_start: function(callback) {
+		select_free_num: function(callback) {
 			pool.getConnection(function(err, con){
-				var sql = 'select CAL_START from BOARD_CAL';
+				var sql = 'select FREE_NUM from BOARD_FREE';
+				con.query(sql, function(err, result, fields){
+					con.release();
+					if(err) return callback(err);
+					callback(null. result);
+				});
+			});
+		},
+		select_free_content: function(callback) {
+			pool.getConnection(function(err, con){
+				var sql = 'select FREE_CONTENT from BOARD_FREE';
+				con.query(sql, function(err, result, fields) {
+					con.release();
+					if(err) return callback(err);
+					callback(null, result);
+				});
+			});
+		}, 
+		select_free_writer: function(callback) {
+			pool.getConnection(function(err, con){
+				var sql = 'select FREE_WRITER from BOARD_FREE';
 				con.query(sql, function(err, result, fields) {
 					con.release();
 					if(err) return callback(err);
@@ -32,23 +42,13 @@ module.exports = function () {
 				});
 			});
 		},
-		select_cal_end: function(callback) {
+		select_free_time: function(callback){
 			pool.getConnection(function(err, con){
-				var sql = 'select CAL_END from BOARD_CAL';
-				con.query(sql, function(err,result, fields) {
-					con.release();
-					if(err) return callback(err);
-					callback(null, result);
-				});
-			});
-		},
-		select_cal_content: function(callback) {
-			pool.getConnection(function(err,con){
-				var sql = 'select CAL_CONTENT from BOARD_CAL';
+				var sql = 'select FREE_TIME from BOARD_FREE';
 				con.query(sql, function(err, result, fields) {
 					con.release();
 					if(err) return callback(err);
-					callback(null, result);
+					callback(null. result);
 				});
 			});
 		},

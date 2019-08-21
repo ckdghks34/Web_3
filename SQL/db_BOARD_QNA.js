@@ -1,30 +1,20 @@
 var pool = require('../config/db_config');
 
 module.exports = function() {
-	return {
+	return{
 		select: function(callback) {
-			pool.getConnection(function(err, con){
-				var sql = 'select * from BOARD_BISA';
+			pool.getConnection(function(err, con) {
+				var sql = 'select * from BOARD_QNA';
 				con.query(sql, function (err, result, fields) {
 					con.release();
 					if(err) return callback(err);
-					callback(null, return);
+					callback(null, result);
 				});
 			});
 		},
-		select_bisa_num: function(callback) {
+		select_qna_num: function(callback) {
 			pool.getConnection(function(err, con){
-				var sql = 'select BISA_NUM from BOARD_BISA';
-				con.query(sql, function(err, result, fields) {
-					con.release();
-					if(err) return callback(err);
-					callback(null.result);
-				});
-			});
-		},
-		select_bisa_content: function(callback){
-			pool.getConnection(function(err,con){
-				var sql = 'select BISA_CONTENT from BOARD_BISA';
+				var sql = 'select QNA_NUM from BOARD_QNA';
 				con.query(sql, function(err, result, fields) {
 					con.release();
 					if(err) return callback(err);
@@ -32,49 +22,56 @@ module.exports = function() {
 				});
 			});
 		},
-		select_bisa_writer: function(callback) {
-			pool.getConnection(function(err,con){
-				var sql = 'select BISA_WRITER from BOARD_BISA';
-				con.query(sql, function(err, result, fields) {
-					con.release();
-					if(err) return callback(err);
-					callback(null, result);
-				});
-			});
-		},
-		select_bisa_time: function(callback) {
+		select_qna_content: function(callback) {
 			pool.getConnection(function(err, con) {
-				var sql = 'select BISA_TIME from BOARD_BISA';
+				var sql = 'select QNA_CONTENT from BOARD_QNA';
 				con.query(sql, function(err, result, fields) {
 					con.release();
 					if(err) return callback(err);
 					callback(null, result);
 				});
 			});
-		}, 
+		},
+		select_qna_writer: function(callback) {
+			pool.getConnection(function(err, con) {
+				var sql = 'select QNA_WRITER from BOARD_QNA';
+				con.query(sql, function(err, result, fields) {
+					con.release();
+					if(err) return callback(err);
+					callback(null, result);
+				});
+			});
+		},
+		select_qna_time: function(callback) {
+			pool.getConnection(function(err, con) {
+				var sql = 'select QNA_TIME from BOARD_QNA';
+				con.query(sql, function(err, result, fields) {
+					con.release();
+					if(err) return callback(err);
+					callback(null, result);
+				});
+			});
+		},
+		select_is_checked: function(callback) {
+			pool.getConnection(function(err, con){
+				var sql = 'select IS_CHECKED from BOARD_QNA';
+				con.query(sql, function(err, result, fields) {
+					con.release();
+					if(err) return callback(err);
+					callback(null, result);
+				});
+			});
+		},
 		select_is_secret: function(callback){
 			pool.getConnection(function(err, con){
-				var sql = 'select IS_SECRET from BOARD_BISA';
+				var sql = 'select IS_SECRET from BOARD_QNA';
 				con.query(sql, function(err, result, fields) {
 					con.release();
 					if(err) return callback(err);
-					callback(null, result);
+					callback (null, result);
 				});
 			});
 		},
-		write: function(title,content,id,writer,time,callback){
-			pool.getConnection(function(err, con){
-				var sql = 'insert into BOARD_BISA(BISA_NUM,S_ID,BISA_CONTENT,BISA_WRITER,BiSA_TIME) value('1','id','content','writer','time')';
-				con.query(sql, function(err,result,fileds){
-					con.release();
-					console.log(result);
-
-					if(err) return callback(err);
-					else callback(null,result);
-				});
-			});
-		},
-
 		pool: pool
 	}
 };

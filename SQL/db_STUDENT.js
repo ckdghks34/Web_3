@@ -54,7 +54,7 @@ module.exports = function () {
 		},
 		select_login: function(id,pw,callback){
 			pool.getConnection(function(err, con) {
-				var sql = `select count(*) cnt from STUDENT where S_ID = "${id}" AND S_PW = "${pw}"`;
+				var sql = `select S_NAME,S_ID from STUDENT where S_ID = "${id}" AND S_PW = "${pw}"`;
 				con.query(sql, function(err, result, fields){
 					con.release();
 					console.log(result);
