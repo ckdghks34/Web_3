@@ -1,7 +1,278 @@
-<html>
-  <head>
-    <body>
-      비사광장.html
-    </body>
-  </head>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" initial-scale="1">
+  <title>비사광장</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!-- My Css -->
+<style>
+    body {
+      margin-left: 80px;
+      margin-right: 80px;
+    }
+    #topMenu{/*탑메뉴의 높이와 너비*/
+      height: 70px;
+      width: device-width;
+    }
+    #topMenu ul{
+      list-style-type: none;/*list 앞의 마커를 정하는 속성*/
+      margin: 0px;/*바깥 쪽 여백*/
+      padding: 0px;/*안 쪽 여백*/
+    }
+    #topMenu ul li{
+      color: white;
+      background-color: #1f7ec1;
+      float: left;/*왼쪽으로 배치*/
+      line-height: 70px;/*줄의 높이*/
+      vertical-align: middle;/*수직 정렬*/
+      text-align: center;/*텍스트 정렬 방식*/
+      position: relative;/*위치는 상대적으로*/
+    }
+
+    .menuLink, .submenuLink{
+      text-decoration: none; /*텍스트 선의 유무*/
+      display:block; /*block : 요소 앞뒤로 줄바꿈*/
+      width: 210px;
+      font-size: 20px;
+      font-weight: bold;/*글씨 굵기*/
+      font-family: "Trebuchet MS", Dotum;/*글꼴*/
+    }
+    .menuLink{
+      color: white;
+    }
+    .topMenuLi:hover .menuLink{/*탑메뉴 위에 마우스가 올려있을 시*/
+      color: white;
+      background-color: #0c324d;
+    }
+    .submenuLink{
+      color: gray;
+      background-color: #ddecf6;
+      margin-top: -1px;
+    }
+    .topMenuLi:hover .submenu{
+      height: auto;
+      /* 올렸을때 서브메뉴가 나오는 문장 */
+    }
+    .submenu{
+      position: absolute;/*위치는 절대적으로*/
+      height: 0px;
+      float: none;
+      overflow: hidden;/*내용이 넘치면 자르는데 자른 부분은 보이지 않음*/
+      transition: height .2s;
+      z-index: 2;
+    }
+    .submenuLink:hover{
+      color: white;
+      background-color: #334858;
+    }
+    #topMenu button{
+      margin: auto;
+      padding-left: 70px;
+      padding-right: 70px;
+    }
+    #title{
+      text-align:left;
+      padding-left:100px
+    }
+    #search_bar{
+      text-align:right;
+      padding-right: 100px
+    }
+    #main{
+      border:solid 1px;
+      text-align:center
+    }
+    #top_bar{
+      margin: 20px
+    }
+    #top_bar .btn{
+      width:235px;
+      height:40px;
+      margin:0 30px 0 30px;
+    }
+    #freeboard th{
+      text-align:center;
+      color:white;
+    }
+    #freeboard td{
+      text-align:center;
+    }
+    #freeboard tr.content:hover{
+      background-color: #A4A4A4;
+    }
+    #end_table {
+      <!-- 선 굵기를 두껍게 하고싶은데 안된다ㅠㅠ -->
+      border:2px;
+      height:2px;
+      backgroud:#848484;
+    }
+</style>
+</head>
+<body>
+  <nav id="topMenu">
+    <ul>
+      <img src="로고.png"width="70px"height="70px" style="float:left;">
+      <li class="topMenuLi"><a class="menuLink" href="학과홈페이지.html">ComputerEngineering</a></li>
+      <li class="topMenuLi"><a class="menuLink"href="학과소개.html">Department</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="Department.html">학과소개</a></li>
+          <li><a class="submenuLink"href="커리큘럼.html">커리큘럼</a></li>
+          <li><a class="submenuLink"href="교수진.html">교수진</a></li>
+          <li><a class="submenuLink"href="학생회.html">학생회</a></li>
+          <li><a class="submenuLink"href="학과일정.html">학과일정</a></li>
+        </ul>
+      </li>
+      <li class="topMenuLi"><a class="menuLink"href="사물함.html">Applications</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="사물함.html">사물함</a></li>
+          <li><a class="submenuLink" href="수강증원.html">수강증원</a></li>
+          <li><a class="submenuLink" href="멘토멘티.html">멘토멘티</a></li>
+        </ul>
+      </li>
+      <li class="topMenuLi"><a class="menuLink"href="공지.html">Announcement</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="공지.html">공지</a></li>
+          <li><a class="submenuLink" href="취업게시판.html">취업게시판</a></li>
+        </ul>
+      </li>
+      <li class="topMenuLi"><a class="menuLink"href="비사광장.html">Community</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="비사광장.html">비사광장</a></li>
+          <li><a class="submenuLink" href="활동사진.html">활동사진</a></li>
+          <li><a class="submenuLink" href="자유게시판.html">자유게시판</a></li>
+          <li><a class="submenuLink" href="Q&A.html">Q&A</a></li>
+        </ul>
+      </li>
+      	<tr>
+      		<input type = "text" placeholder="학번"><br>
+      		<input type = "password"placeholder="비밀번호">
+      		<button type = "submit" >Log In</button>
+      	</tr>
+    </ul>
+  </nav>
+  <div id="main">
+    <div id="title">
+    <h1 style="font-size:20px"><b>비사광장</b></h1>
+    </div>
+    <div class="search_bar" >
+      <div class="col-xs-3" style="margin-left:870px;padding:0px;">
+        <input type="text" class="form-control" placeholder="키워드를 입력하세요">
+        </div>
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button" style="float: left;"><span class="glyphicon glyphicon-search"></span></button>
+        </span>
+      </div>
+  <hr width="1140">
+  <div id="top_bar">
+  <button type="button" onclick="location.href='비사광장.html'"class="btn btn-danger">비사광장</button>
+  <button type="button" onclick="location.href='활동사진.html'"class="btn btn-default">활동사진</button>
+  <button type="button" onclick="location.href='자유게시판.html'" class="btn btn-default">자유게시판</button>
+  <button type="button" onclick="location.href='Q&A.html'" class="btn btn-default">Q&A</button>
+  </div>
+  <div id="freeboard" class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr bgcolor="black">
+      <th>Num</th>
+      <th>Title</th>
+      <th>Writer</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr class="content">
+        <td>10</td>
+        <td>Enter a title.</td>
+        <td>Lee</td>
+        <td>2019.01.07</td>
+      </tr>
+      <tr class="content">
+        <td>9</td>
+        <td>Enter a title.</td>
+        <td>Lee</td>
+        <td>2019.01.07</td>
+      </tr>
+      <tr class="content">
+        <td>8</td>
+        <td>Enter a title.</td>
+        <td>Lee</td>
+        <td>2019.01.07</td>
+      </tr>
+      <tr class="content">
+        <td>7</td>
+        <td>Enter a title.</td>
+        <td>Lee</td>
+        <td>2019.01.07</td>
+      </tr>
+      <tr class="content">
+        <td>6</td>
+        <td>Enter a title.</td>
+        <td>Lee</td>
+        <td>2019.01.07</td>
+      </tr>
+      <tr class="content">
+        <td>5</td>
+        <td>Enter a title.</td>
+        <td>Lee</td>
+        <td>2019.01.07</td>
+      </tr>
+      <tr class="content">
+        <td>4</td>
+        <td>Enter a title.</td>
+        <td>Lee</td>
+        <td>2019.01.07</td>
+      </tr>
+      <tr class="content">
+        <td>3</td>
+        <td>Enter a title.</td>
+        <td>Lee</td>
+        <td>2019.01.07</td>
+      </tr>
+      <tr class="content">
+        <td>2</td>
+        <td>Enter a title.</td>
+        <td>Lee</td>
+        <td>2019.01.07</td>
+      </tr>
+      <tr class="content">
+        <td>1</td>
+        <td>Enter a title.</td>
+        <td>Lee</td>
+        <td>2019.01.07</td>
+      </tr>
+      </tbody>
+      </table>
+      <hr id="end_table">
+      <form class="move_page" action="글쓰기화면.html" method="get">
+        <input type="text" name="page_num" value="1" hidden="true">
+        <button type="submit" class="btn btn-default pull-right">글쓰기</button>
+      </form>
+      <div class="text-center">
+        <ul class="pagination">
+          <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+          <li><a href="#">1</a><li>
+          <li><a href="#">2</a><li>
+          <li><a href="#">3</a><li>
+          <li><a href="#">4</a><li>
+            <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+</body>
 </html>
