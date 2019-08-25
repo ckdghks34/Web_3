@@ -102,48 +102,48 @@
       background-color: #A4A4A4;
     }
     #end_table {
-      <!-- 선 굵기를 두껍게 하고싶은데 안된다ㅠㅠ -->
       border:2px;
       height:2px;
-      backgroud:#848484;
+      background:#848484;
     }
 </style>
 </head>
 <body>
   <nav id="topMenu">
     <ul>
-      <img src="로고.png" width="70px" height="70px" style="float:left;">
-      <li class="topMenuLi"><a class="menuLink" href="학과홈페이지.html">ComputerEngineering</a></li>
-      <li class="topMenuLi"><a class="menuLink"href="학과소개.html">Department</a>
-        <ul class="submenu">
-          <li><a class="submenuLink" href="Department.html">학과소개</a></li>
-          <li><a class="submenuLink" href="커리큘럼.html">커리큘럼</a></li>
-          <li><a class="submenuLink" href="교수진.html">교수진</a></li>
-          <li><a class="submenuLink" href="학생회.html">학생회</a></li>
-          <li><a class="submenuLink" href="학과일정.html">학과일정</a></li>
-        </ul>
-      </li>
-      <li class="topMenuLi"><a class="menuLink"href="사물함.html">Applications</a>
-        <ul class="submenu">
-          <li><a class="submenuLink" href="사물함.html">사물함</a></li>
-          <li><a class="submenuLink" href="수강증원.html">수강증원</a></li>
-          <li><a class="submenuLink" href="멘토멘티.html">멘토멘티</a></li>
-        </ul>
-      </li>
-      <li class="topMenuLi"><a class="menuLink"href="공지.html">Announcement</a>
-        <ul class="submenu">
-          <li><a class="submenuLink" href="공지.html">공지</a></li>
-          <li><a class="submenuLink" href="취업게시판.html">취업게시판</a></li>
-        </ul>
-      </li>
-      <li class="topMenuLi"><a class="menuLink"href="비사광장.html">Community</a>
-        <ul class="submenu">
-          <li><a class="submenuLink" href="비사광장.html">비사광장</a></li>
-          <li><a class="submenuLink" href="활동사진.html">활동사진</a></li>
-          <li><a class="submenuLink" href="자유게시판.html">자유게시판</a></li>
-          <li><a class="submenuLink" href="Q&A.html">Q&A</a></li>
-        </ul>
-      </li>
+   <!--<img src="./img/logo.png"width="70px"height="70px" style="float:left;">-->
+   <li class="topMenuLi"><a class="menuLink" href="/"><img src="../img/logo.png" width="210px" height="70px"
+    style="float:left;"></a></li>
+<li class="topMenuLi"><a class="menuLink" href="/department">Department</a>
+<ul class="submenu">
+  <li><a class="submenuLink" href="/department/intro">학과소개</a></li>
+  <li><a class="submenuLink" href="/department/curriculum">커리큘럼</a></li>
+  <li><a class="submenuLink" href="/department/professor">교수진</a></li>
+  <li><a class="submenuLink" href="/department/council">학생회</a></li>
+  <li><a class="submenuLink" href="/department/schedule">학과일정</a></li>
+</ul>
+</li>
+<li class="topMenuLi"><a class="menuLink" href="/application">Applications</a>
+<ul class="submenu">
+  <li><a class="submenuLink" href="/application/locker">사물함</a></li>
+  <li><a class="submenuLink" href="/application/course">수강증원</a></li>
+  <li><a class="submenuLink" href="/application/mentomenti">멘토멘티</a></li>
+</ul>
+</li>
+<li class="topMenuLi"><a class="menuLink" href="/announcement/">Announcement</a>
+<ul class="submenu">
+  <li><a class="submenuLink" href="/announcement/notice">공지</a></li>
+  <li><a class="submenuLink" href="/announcement/job">취업게시판</a></li>
+</ul>
+</li>
+<li class="topMenuLi"><a class="menuLink" href="/community/bisa">Community</a>
+<ul class="submenu">
+  <li><a class="submenuLink" href="/community/bisa">비사광장</a></li>
+  <li><a class="submenuLink" href="/community/photo">활동사진</a></li>
+  <li><a class="submenuLink" href="/community/free">자유게시판</a></li>
+  <li><a class="submenuLink" href="/community/QnA">Q&A</a></li>
+</ul>
+</li>
       	<tr>
       		<input type = "text" placeholder="학번"><br>
       		<input type = "password"placeholder="비밀번호">
@@ -165,10 +165,10 @@
       </div>
   <hr width="1140">
   <div id="top_bar">
-    <button type="button" onclick="location.href='비사광장.html'"class="btn btn-default">비사광장</button>
-    <button type="button" onclick="location.href='활동사진.html'"class="btn btn-default">활동사진</button>
-    <button type="button" onclick="location.href='자유게시판.html'" class="btn btn-danger">자유게시판</button>
-    <button type="button" onclick="location.href='Q&A.html'" class="btn btn-default">Q&A</button>
+    <button type="button" onclick="location.href='/community/bisa'"class="btn btn-default">비사광장</button>
+    <button type="button" onclick="location.href='/community/photo'"class="btn btn-default">활동사진</button>
+    <button type="button" onclick="location.href='/community/free'" class="btn btn-danger">자유게시판</button>
+    <button type="button" onclick="location.href='/community/QnA'" class="btn btn-default">Q&A</button>
   </div>
   <div id="freeboard" class="container">
   <table class="table table-striped">
