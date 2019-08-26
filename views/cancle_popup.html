@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>취소</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script language="javascript">
+function moveClose() {
+  opener.location.href="./";
+  self.close();
+}
+</script>
+<style>
+*{
+  margin-top:50px;
+  text-align: center;
+}
+h1{
+  margin-bottom:30px
+}
+</style>
+</head>
+<body onload="window.resizeTo(400,300)">
+<h1>취소하시겠습니까?</h1>
+<input type="button" class="btn btn-danger" value="네" onclick="moveClose();" />  <!-- 저장안하고 닫기 -->
+<input type="button" class="btn btn-primary" value="아니요" onclick="self.close();" />
+</body>
+</html>

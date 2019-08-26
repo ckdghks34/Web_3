@@ -84,46 +84,46 @@
   }
 </style>
 <script language="javascript">
-function cancle_Popup() { window.open("cancle", "yes_or_no", "width=400, height=300, left=600, top=200"); }
-function save_Popup() { window.open("save", "yes_or_no", "width=400, height=300, left=600, top=200"); }
+function cancle_Popup() { window.open("취소_팝업.html", "yes_or_no", "width=400, height=300, left=600, top=200"); }
+function save_Popup() { window.open("저장_팝업.html", "yes_or_no", "width=400, height=300, left=600, top=200"); }
 </script>
 </head>
 
 <body>
   <nav id="topMenu">
     <ul>
-      <!--<img src="./img/logo.png"width="70px"height="70px" style="float:left;">-->
-  <li class="topMenuLi"><a class="menuLink" href="/"><img src="../../img/logo.png"width="210px"height="70px" style="float:left;"></a></li>
-  <li class="topMenuLi"><a class="menuLink"href="/department/intro">Department</a>
-    <ul class="submenu">
-      <li><a class="submenuLink" href="/department/intro">학과소개</a></li>
-      <li><a class="submenuLink"href="/department/curriculum">커리큘럼</a></li>
-      <li><a class="submenuLink"href="/department/professor">교수진</a></li>
-      <li><a class="submenuLink"href="/department/council">학생회</a></li>
-      <li><a class="submenuLink"href="/department/schedule">학과일정</a></li>
-    </ul>
-  </li>
-  <li class="topMenuLi"><a class="menuLink"href="/application/locker">Applications</a>
-    <ul class="submenu">
-      <li><a class="submenuLink" href="/application/locker">사물함</a></li>
-      <li><a class="submenuLink" href="/application/course">수강증원</a></li>
-      <li><a class="submenuLink" href="/application/mentomenti">멘토멘티</a></li>
-    </ul>
-  </li>
-  <li class="topMenuLi"><a class="menuLink"href="/announcement/notice">Announcement</a>
-    <ul class="submenu">
-      <li><a class="submenuLink" href="/announcement/notice">공지</a></li>
-      <li><a class="submenuLink" href="/announcement/job">취업게시판</a></li>
-    </ul>
-  </li>
-  <li class="topMenuLi"><a class="menuLink"href="/community/bisa">Community</a>
-    <ul class="submenu">
-      <li><a class="submenuLink" href="/community/bisa">비사광장</a></li>
-      <li><a class="submenuLink" href="/community/photo">활동사진</a></li>
-      <li><a class="submenuLink" href="/community/free">자유게시판</a></li>
-      <li><a class="submenuLink" href="/community/QnA">Q&A</a></li>
-    </ul>
-  </li>
+      <img src="로고.png"width="70px"height="70px" style="float:left;">
+      <li class="topMenuLi"><a class="menuLink" href="학과홈페이지.html">ComputerEngineering</a></li>
+      <li class="topMenuLi"><a class="menuLink"href="학과소개.html">Department</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="Department.html">학과소개</a></li>
+          <li><a class="submenuLink"href="커리큘럼.html">커리큘럼</a></li>
+          <li><a class="submenuLink"href="교수진.html">교수진</a></li>
+          <li><a class="submenuLink"href="학생회.html">학생회</a></li>
+          <li><a class="submenuLink"href="학과일정.html">학과일정</a></li>
+        </ul>
+      </li>
+      <li class="topMenuLi"><a class="menuLink"href="사물함.html">Applications</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="사물함.html">사물함</a></li>
+          <li><a class="submenuLink" href="수강증원.html">수강증원</a></li>
+          <li><a class="submenuLink" href="멘토멘티.html">멘토멘티</a></li>
+        </ul>
+      </li>
+      <li class="topMenuLi"><a class="menuLink"href="공지.html">Announcement</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="공지.html">공지</a></li>
+          <li><a class="submenuLink" href="취업게시판.html">취업게시판</a></li>
+        </ul>
+      </li>
+      <li class="topMenuLi"><a class="menuLink"href="비사광장.html">Community</a>
+        <ul class="submenu">
+          <li><a class="submenuLink" href="비사광장.html">비사광장</a></li>
+          <li><a class="submenuLink" href="활동사진.html">활동사진</a></li>
+          <li><a class="submenuLink" href="자유게시판.html">자유게시판</a></li>
+          <li><a class="submenuLink" href="Q&A.html">Q&A</a></li>
+        </ul>
+      </li>
       	<tr>
       		<input type = "text" placeholder="학번"><br>
       		<input type = "password"placeholder="비밀번호">
@@ -136,7 +136,7 @@ function save_Popup() { window.open("save", "yes_or_no", "width=400, height=300,
 <div id="wrtingscreen" style="border:1px solid black;">
 	<div class="container">
 		<div class="row">
-			<form method="post" action="writeAction.jsp" style="margin-top:50px">
+			<form method="post" enctype="multipart/form-data" name="" action="writeAction.jsp" style="margin-top:50px">
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 					<thead>
 						<tr>
@@ -147,6 +147,9 @@ function save_Popup() { window.open("save", "yes_or_no", "width=400, height=300,
 						<tr>
 							<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"/></td>
 						</tr>
+            <tr style="background-color: #FAFAFA;">
+              <td><input type="file" name="FileName"></td>
+            </tr>
 						<tr>
 							<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
 						</tr>
@@ -177,7 +180,7 @@ var getParameter = function (param) {
 };
 var page_num = getParameter('page_num');
 
-alert(page_num);
+// alert(page_num);
 </script>
 	<!-- 애니매이션 담당 JQUERY -->
 
