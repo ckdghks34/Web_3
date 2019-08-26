@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- 뷰포트 -->
+<meta name="viewport" content="width=device-width" initial-scale="1">
+<!-- 스타일시트 참조  -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<title>글쓰기페이지</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!-- My Css -->
+<style>
+  body {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  #topMenu{/*탑메뉴의 높이와 너비*/
+    height: 70px;
+    width: device-width;
+  }
+  #topMenu ul{
+    list-style-type: none;/*list 앞의 마커를 정하는 속성*/
+    margin: 0px;/*바깥 쪽 여백*/
+    padding: 0px;/*안 쪽 여백*/
+  }
+  #topMenu ul li{
+    color: white;
+    background-color: #1f7ec1;
+    float: left;/*왼쪽으로 배치*/
+    line-height: 70px;/*줄의 높이*/
+    vertical-align: middle;/*수직 정렬*/
+    text-align: center;/*텍스트 정렬 방식*/
+    position: relative;/*위치는 상대적으로*/
+  }
+
+  .menuLink, .submenuLink{
+    text-decoration: none; /*텍스트 선의 유무*/
+    display:block; /*block : 요소 앞뒤로 줄바꿈*/
+    width: 210px;
+    font-size: 20px;
+    font-weight: bold;/*글씨 굵기*/
+    font-family: "Trebuchet MS", Dotum;/*글꼴*/
+  }
+  .menuLink{
+    color: white;
+  }
+  .topMenuLi:hover .menuLink{/*탑메뉴 위에 마우스가 올려있을 시*/
+    color: white;
+    background-color: #0c324d;
+  }
+  .submenuLink{
+    color: gray;
+    background-color: #ddecf6;
+    margin-top: -1px;
+  }
+  .topMenuLi:hover .submenu{
+    height: auto;
+    /* 올렸을때 서브메뉴가 나오는 문장 */
+  }
+  .submenu{
+    position: absolute;/*위치는 절대적으로*/
+    height: 0px;
+    float: none;
+    overflow: hidden;/*내용이 넘치면 자르는데 자른 부분은 보이지 않음*/
+    transition: height .2s;
+  }
+  .submenuLink:hover{
+    color: white;
+    background-color: #334858;
+  }
+  /* 게시판 css */
+  #writingscreen {
+    position: relative;
+  }
+</style>
+<script language="javascript">
+function cancle_Popup() { window.open("취소_팝업.html", "yes_or_no", "width=400, height=300, left=600, top=200"); }
+function save_Popup() { window.open("저장_팝업.html", "yes_or_no", "width=400, height=300, left=600, top=200"); }
+</script>
+</head>
+
+<body>
+  <nav id="topMenu">
+    <ul>
+      <!--<img src="./img/logo.png"width="70px"height="70px" style="float:left;">-->
+  <li class="topMenuLi"><a class="menuLink" href="/"><img src="../../img/logo.png"width="210px"height="70px" style="float:left;"></a></li>
+  <li class="topMenuLi"><a class="menuLink"href="/department/intro">Department</a>
+    <ul class="submenu">
+      <li><a class="submenuLink" href="/department/intro">학과소개</a></li>
+      <li><a class="submenuLink"href="/department/curriculum">커리큘럼</a></li>
+      <li><a class="submenuLink"href="/department/professor">교수진</a></li>
+      <li><a class="submenuLink"href="/department/council">학생회</a></li>
+      <li><a class="submenuLink"href="/department/schedule">학과일정</a></li>
+    </ul>
+  </li>
+  <li class="topMenuLi"><a class="menuLink"href="/application/locker">Applications</a>
+    <ul class="submenu">
+      <li><a class="submenuLink" href="/application/locker">사물함</a></li>
+      <li><a class="submenuLink" href="/application/course">수강증원</a></li>
+      <li><a class="submenuLink" href="/application/mentomenti">멘토멘티</a></li>
+    </ul>
+  </li>
+  <li class="topMenuLi"><a class="menuLink"href="/announcement/notice">Announcement</a>
+    <ul class="submenu">
+      <li><a class="submenuLink" href="/announcement/notice">공지</a></li>
+      <li><a class="submenuLink" href="/announcement/job">취업게시판</a></li>
+    </ul>
+  </li>
+  <li class="topMenuLi"><a class="menuLink"href="/community/bisa">Community</a>
+    <ul class="submenu">
+      <li><a class="submenuLink" href="/community/bisa">비사광장</a></li>
+      <li><a class="submenuLink" href="/community/photo">활동사진</a></li>
+      <li><a class="submenuLink" href="/community/free">자유게시판</a></li>
+      <li><a class="submenuLink" href="/community/QnA">Q&A</a></li>
+    </ul>
+  </li>
+      	<tr>
+      		<input type = "text" placeholder="학번"><br>
+      		<input type = "password"placeholder="비밀번호">
+      		<button type = "submit" >Log In</button>
+      	</tr>
+    </ul>
+  </nav>
+
+	<!-- 게시판 -->
+<div id="wrtingscreen" style="border:1px solid black;">
+	<div class="container">
+		<div class="row">
+			<form method="post" action="writeAction.jsp" style="margin-top:50px">
+				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+					<thead>
+						<tr>
+							<th colspan="2"style="background-color: #eeeeee; text-align: center;"><span class="glyphicon glyphicon-pencil"></span> 글쓰기</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"/></td>
+						</tr>
+						<tr>
+							<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+        <div class="cal_save">
+          <input type="button" class="btn btn-danger pull-right" style="margin-right:10px" value="취소" onclick="cancle_Popup()" />
+          <!-- onclick = "javascript:popup()" target = "_blank"  -->
+  				<input type="button" class="btn btn-primary pull-right" style="margin-right:10px; margin-bottom:50px" value="저장" onclick="save_Popup()" />
+        </div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+var getParameter = function (param) {
+    var returnValue;
+    var url = location.href;
+    var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+    for (var i = 0; i < parameters.length; i++) {
+        var varName = parameters[i].split('=')[0];
+        if (varName.toUpperCase() == param.toUpperCase()) {
+            returnValue = parameters[i].split('=')[1];
+            return decodeURIComponent(returnValue);
+        }
+    }
+};
+var page_num = getParameter('page_num');
+
+alert(page_num);
+</script>
+	<!-- 애니매이션 담당 JQUERY -->
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<!-- 부트스트랩 JS  -->
+
+	<script src="js/bootstrap.js"></script>
+
+
+</body>
+
+</html>

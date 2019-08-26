@@ -1,7 +1,193 @@
 <html>
-  <head>
-    <body>
-      멘토멘티.html
-    </body>
-  </head>
+<head>
+    <meta charset="utf-8">
+    <title>멘토멘티</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- My Css -->
+
+<style>
+  body {
+   margin-left: 80px;
+   margin-right: 80px;
+ }
+  #topMenu{/*탑메뉴의 높이와 너비*/
+    height: 70px;
+    width: device-width;
+  }
+  #topMenu ul{
+    list-style-type: none;/*list 앞의 마커를 정하는 속성*/
+    margin: 0px;/*바깥 쪽 여백*/
+    padding: 0px;/*안 쪽 여백*/
+  }
+  #topMenu ul li{
+    color: white;
+    background-color: #1f7ec1;
+    float: left;/*왼쪽으로 배치*/
+    line-height: 70px;/*줄의 높이*/
+    vertical-align: middle;/*수직 정렬*/
+    text-align: center;/*텍스트 정렬 방식*/
+    position: relative;/*위치는 상대적으로*/
+  }
+
+  .menuLink, .submenuLink{
+    text-decoration: none; /*텍스트 선의 유무*/
+    display:block; /*block : 요소 앞뒤로 줄바꿈*/
+    width: 210px;
+    font-size: 20px;
+    font-weight: bold;/*글씨 굵기*/
+    font-family: "Trebuchet MS", Dotum;/*글꼴*/
+  }
+  .menuLink{
+    color: white;
+  }
+  .topMenuLi:hover .menuLink{/*탑메뉴 위에 마우스가 올려있을 시*/
+    color: white;
+    background-color: #0c324d;
+  }
+  .submenuLink{
+    color: gray;
+    background-color: #ddecf6;
+    margin-top: -1px;
+  }
+  .topMenuLi:hover .submenu{
+    height: auto;
+    /* 올렸을때 서브메뉴가 나오는 문장 */
+  }
+  .submenu{
+    position: absolute;/*위치는 절대적으로*/
+    height: 0px;
+    float: none;
+    overflow: hidden;/*내용이 넘치면 자르는데 자른 부분은 보이지 않음*/
+    transition: height .2s;
+  }
+  .submenuLink:hover{
+    color: white;
+    background-color: #334858;
+  }
+  #title{
+    text-align:left;
+    padding-left:100px
+  }
+  #main{
+    border:solid 1px;
+    text-align:center
+  }
+  #top_bar{
+    margin: 20px
+  }
+  #top_bar .btn{
+    width:235px;
+    height:40px;
+    margin:0 30px 0 30px;
+  }
+  .choose_MM{
+    margin:1.5%;
+    text-align:left;
+    border:3px groove;
+    width:25%;
+    height:150px;
+    display: inline-block;
+     border-radius: 7px;
+    -moz-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    -webkit-border-radius: 7px;
+  }
+  .choose_MM a{
+    font-size:20px;
+    color:black;
+  }
+</style>
+</head>
+<body >
+  <nav id="topMenu">
+    <ul>
+   <!--<img src="./img/logo.png"width="70px"height="70px" style="float:left;">-->
+   <li class="topMenuLi"><a class="menuLink" href="/"><img src="../../img/logo.png" width="210px" height="70px"
+    style="float:left;"></a></li>
+<li class="topMenuLi"><a class="menuLink" href="/department">Department</a>
+<ul class="submenu">
+  <li><a class="submenuLink" href="/department/intro">학과소개</a></li>
+  <li><a class="submenuLink" href="/department/curriculum">커리큘럼</a></li>
+  <li><a class="submenuLink" href="/department/professor">교수진</a></li>
+  <li><a class="submenuLink" href="/department/council">학생회</a></li>
+  <li><a class="submenuLink" href="/department/schedule">학과일정</a></li>
+</ul>
+</li>
+<li class="topMenuLi"><a class="menuLink" href="/application">Applications</a>
+<ul class="submenu">
+  <li><a class="submenuLink" href="/application/locker">사물함</a></li>
+  <li><a class="submenuLink" href="/application/course">수강증원</a></li>
+  <li><a class="submenuLink" href="/application/mentomenti">멘토멘티</a></li>
+</ul>
+</li>
+<li class="topMenuLi"><a class="menuLink" href="/announcement/">Announcement</a>
+<ul class="submenu">
+  <li><a class="submenuLink" href="/announcement/notice">공지</a></li>
+  <li><a class="submenuLink" href="/announcement/job">취업게시판</a></li>
+</ul>
+</li>
+<li class="topMenuLi"><a class="menuLink" href="/community/bisa">Community</a>
+  <ul class="submenu">
+    <li><a class="submenuLink" href="/community/bisa">비사광장</a></li>
+    <li><a class="submenuLink" href="/community/photo">활동사진</a></li>
+    <li><a class="submenuLink" href="/community/free">자유게시판</a></li>
+    <li><a class="submenuLink" href="/community/QnA">Q&A</a></li>
+  </ul>
+  </li>
+      <tr>
+        <input type = "text" placeholder="학번"><br>
+        <input type = "password"placeholder="비밀번호">
+        <button type = "submit" >Log In</button>
+      </tr>
+    </ul>
+  </nav>
+  <br>
+  <div id="main">
+    <div id="title">
+    <h1 style="font-size:20px; "><b>멘토멘티</b></h1>
+    </div>
+    <hr width="1140" style="margin-top:40px">
+    <div id="top_bar">
+      <button type="button" onclick="location.href='/application/locker'"class="btn btn-default">사물함</button>
+      <button type="button" onclick="location.href='/application/course'"class="btn btn-default">수강증원</button>
+      <button type="button" onclick="location.href='/application/mentomenti'" class="btn btn-danger">멘토멘티</button>
+  </div>
+    <p><b>희망하는 분야를 선택해주세요 ( 중복은 불가합니다 )</b> </p>
+    <hr width="1140" style=" margin:10;margin-left:120;">
+    <p style="color:blue;"><b>※ 컴퓨터공학과 멘토멘티 프로그램 진행과정</b> </p>
+    <img src="../img/mentomenti.png" style="width:45%;">
+    <br>
+    <div class="choose_MM">
+      <a>학습</a>
+      <ul><input type="radio" name="chk_info" value="language_C">C언어</ul>
+      <ul><input type="radio" name="chk_info" value="JAVA">JAVA</ul>
+      <ul><input type="radio" name="chk_info" value="ENGLISH">영어</ul>
+    </div>
+    <div class="choose_MM">
+      <a>운동</a>
+      <ul><input type="radio" name="chk_info" value="soccer">축구</ul>
+      <ul><input type="radio" name="chk_info" value="baseball">농구</ul>
+      <ul><input type="radio" name="chk_info" value="football">족구</ul>
+    </div>
+    <div class="choose_MM">
+      <a>취미</a>
+      <ul><input type="radio" name="chk_info" value="movie">영화</ul>
+      <ul><input type="radio" name="chk_info" value="restaurant">맛집</ul>
+      <ul><input type="radio" name="chk_info" value="game">게임</ul>
+    </div>
+    <br>
+    	<input type="button" class="btn btn-primary pull-right" style="margin-right:10px; margin-bottom:50px;display:block;" value="확인" onclick="save_Popup()" />
+  </div>
+  <script language="javascript">
+  function save_Popup() { window.open("저장_팝업_멘토멘티.html", "yes_or_no", "width=400, height=300, left=450, top=200"); }
+  </script>
+</body>
 </html>

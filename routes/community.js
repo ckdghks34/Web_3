@@ -10,6 +10,10 @@ router.get('/bisa',function(req,res,next){
 		res.render('Community_bisa.html');
 });
 
+router.get('/bisa/write', function(req,res,next){
+		res.render('write.html');
+});
+
 router.get('/photo',function(req,res,next){
 		res.render('Community_photo.html');
 });

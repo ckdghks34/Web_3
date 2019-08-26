@@ -8,7 +8,7 @@ module.exports = function() {
 				con.query(sql, function (err, result, fields) {
 					con.release();
 					if(err) return callback(err);
-					callback(null, return);
+					callback(null, result);
 				});
 			});
 		},
@@ -64,7 +64,7 @@ module.exports = function() {
 		},
 		write: function(title,content,id,writer,time,callback){
 			pool.getConnection(function(err, con){
-				var sql = 'insert into BOARD_BISA(BISA_NUM,S_ID,BISA_CONTENT,BISA_WRITER,BiSA_TIME) value('1','id','content','writer','time')';
+				var sql = `insert into BOARD_BISA(S_ID,BISA_TITLE,BISA_CONTENT,BISA_WRITER,BiSA_TIME) value('${id}','${title}','${content}','${writer}','${time}')`;
 				con.query(sql, function(err,result,fileds){
 					con.release();
 					console.log(result);
